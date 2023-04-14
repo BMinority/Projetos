@@ -1,0 +1,250 @@
+/* Estilos gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+}
+
+/* Estilos da Pokedex */
+#container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+#corpoPokedex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: red;
+  border-radius: 20px;
+  height: 90%;
+  width: 50%;
+  max-width: 800px;
+  padding: 18px;
+  box-shadow: inset -4px 4px 30px rgba(0, 0, 0, 0.664);
+}
+
+#luz-musica {
+  width: 100%;
+  position: relative;
+}
+
+.circulo-vermelho {
+  background-color: rgb(156, 18, 18);
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+h1 {
+  color: #fff;
+}
+
+#informacoes {
+  text-align: center;
+  margin: 20px;
+  width: 90%;
+  height: 25%;
+  background-color: black;
+  padding: 2px;
+  border-radius: 10px;
+  transition: 0.3s;
+  box-shadow: inset -2px -2px 15px 5px black;
+}
+
+#informacoes p {
+  display: flex;
+  justify-content: space-evenly;
+  list-style: none;
+  margin-top: 10px;
+  font-size: 24px;
+}
+
+#exibicao {
+  background-color: black;
+  border-radius: 20px;
+  border: 3px solid white;
+  height: 200px;
+  width: 300px;
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s;
+  box-shadow: inset -2px -2px 15px 5px black;
+}
+
+
+#pokemon-img {
+  display: block;
+  margin: auto;
+  top: 0;
+  width: 70%;
+}
+
+#nome-pokemon {
+  background-color: black;
+  border-radius: 20px;
+  border: 3px solid white;
+  height: 50px;
+  width: 300px;
+  margin-top: 3%;
+  padding-top: 10px;
+  display: flex;
+  justify-content:center;
+  transition: 0.3s;
+  box-shadow: inset -2px -2px 15px 5px black;
+}
+
+#nome-pokemon h2 {
+  color: black;
+}
+
+#boxBtn {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+#boxBtn button {
+  background-color: #fff;
+  box-shadow: 2px 2px 3px 3px rgba(0, 0, 0, 0.664);
+  color: red;
+  border: 2px solid red;
+  border-radius: 15px;
+  font-size: 24px;
+  padding: 10px 20px;
+  margin: 0 10px;
+}
+
+#boxBtn button:hover {
+  background-color:aquamarine;
+  color: #fff;
+  box-shadow: inset -2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+}
+
+#boxBtn2 {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-top: 20px;
+}
+
+.container-pesquisa {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+}
+
+.container-pesquisa input {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  margin-right: 2px;
+  width: 60%;
+  border-radius: 10px;
+}
+
+#pesquisaBtn, #cancelarBtn {
+  background-color: #fff;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+  color: blue;
+  border: none;
+  border-radius: 50%;
+  font-size: 24px;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#pesquisaBtn:hover, #cancelarBtn:hover {
+  color: blue;
+  box-shadow: inset -2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+}
+
+#btnLigarDesligar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-left: 5px;
+}
+
+#btnLigarDesligar:hover {
+  background-color: blue;
+  box-shadow: inset -2px 2px 2px 2px rgba(0, 0, 0, 0.664);
+}
+
+#btnLigarDesligar button {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Tela grande (desktop) */
+@media (min-width: 992px) {
+  #corpoPokedex {
+    width: 50%;
+  }
+}
+
+/* Tela média (tablet) */
+@media (min-width: 768px) and (max-width: 991px) {
+  #corpoPokedex {
+    width: 70%;
+  }
+}
+
+/* Tela pequena (smartphone) */
+@media (max-width: 767px) {
+  #corpoPokedex {
+    width: 90%;
+  }
+
+  #informacoes p {
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin-top: 2px;
+    font-size: 14px;
+  }
+
+  #pokemon-img {
+    display: block;
+    margin: auto;
+    top: 0;
+    width: 42%;
+  }
+
+  #nome-pokemon {
+    margin-top: 3%;
+    padding-top: 10px;
+    height: 70px;
+  }
+
+  #nome-pokemon h2 {
+    color: black;
+    font-size: 20px;
+  }
+}

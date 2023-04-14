@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/0a60265145.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="pokedex.css">
+    <title>Pokedex</title>
+</head>
+<body>
+    <div class="container" id="container">
+        <!--div para iniciar sem informações da pokeapi e 
+        exibir as informações da pokeapi quando o
+        botão Ligar/Desligar receber um click do mouse-->
+        <div class="corpoPokedex-desligado" id="corpoPokedex">
+            <div id="luz-musica">
+                <div id="circulo" class="circulo-vermelho"></div>
+            </div>
+
+            <h1>Projeto Pokedex</h1>
+            
+            <div id="informacoes">
+                <!--exibir informações do pokemon-->
+            </div>
+
+            <div id="exibicao">
+                <!--exibir a imagem do pokemon-->
+            </div>
+
+            <div id="nome-pokemon">
+                <!--exibe o nome do pokemon-->
+            </div>
+
+            <div id="boxBtn">
+                <!--botões para mostrar o proximo pokemon ou voltar para o atual-->
+                <button type="button" id="voltar"><i class="fa-solid fa-angles-left"></i></button>
+                <button type="button" id="proximo"><i class="fa-solid fa-angles-right"></i></button>
+            </div>
+
+            <div id="boxBtn2">
+                <!--sessão para buscar pokemon por nome ou numeo-->
+                <div class="container-pesquisa">
+                    <input type="text" id="inputPesquisa" placeholder="Pesquisar Pokémon...">
+                    <!--botão para pesquisar com click-->
+                    <button type="button" id="pesquisaBtn"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <!--botão cancelar para limpar as informações de pesquisa e resetar o pokemon
+                    mostrado na id="exibicao" para o pokemon número 1 da pokeapi -->
+                    <button type="button" id="cancelarBtn"><i class="fa-solid fa-circle-xmark"></i></button>
+                </div>
+
+                <div id="btnLigarDesligar">
+                    <!--botão para ligar ou desligar a pokedex quando receber um click.
+                    Se o usuario clickar uma vez, faz que toda as informações da pokeapi sejam carregadas (como se
+                    ligasse a pokedex como um aparelho físico); se o usuario clicar outra vez, desliga a pokedex(para de exibir
+                    as informações da pokeapi)-->
+                    <button type="button"><i class="fa-solid fa-power-off"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <p>Desenvolvido por Bruno Coelho.</p>
+    </footer>
+
+    <script src="pokedex.js"></script>
+</body>
+</html>
