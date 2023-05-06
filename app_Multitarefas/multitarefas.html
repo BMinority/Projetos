@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="multitarefas.css">
+    <title>Multitarefas</title>
+</head>
+<body>
+    <div id="container">
+        <header>
+            <nav>
+                <div id="menuApp">
+                    <div id="usuario">
+                        <div id="foto-usuario">
+                            <i class="fa-solid fa-circle-user"></i>
+                        </div>
+                        <label for="nome-usuario">Usuário</label>
+                    </div>
+                    <button id="configuracoes">
+                        <i class="fa-solid fa-gear"></i>
+                    </button>
+                </div>
+            </nav>
+        </header>
+
+        <main>
+            <aside>
+                <section id="horas">
+                    <div id="relogio">
+
+                    </div>
+                </section>
+                <section id="calendario">
+                    <h3>Calendário:</h3>
+                    <h4 id="mes-ano"></h4>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Dom</th>
+                                <th>Seg</th>
+                                <th>Ter</th>
+                                <th>Qua</th>
+                                <th>Qui</th>
+                                <th>Sex</th>
+                                <th>Sáb</th>
+                            </tr>
+                        </thead>
+                        <tbody id="dias"></tbody>
+                    </table>
+                </section>
+                <br>
+                <section id="calculadora">
+                    <h3>calculadora:</h3>
+                    <div class="tela">
+                        <input type="text" id="resultado" readonly>
+                    </div>
+                    <div class="botoes">
+                        <div>
+                            <button id="botao1">1</button>
+                            <button id="botao2">2</button>
+                            <button id="botao3">3</button>
+                            <button id="botaoDivisao">/</button>
+                            <button id="botao4">4</button>
+                            <button id="botao5">5</button>
+                            <button id="botao6">6</button>
+                            <button id="botaoMultiplicacao">*</button>
+                            <button id="botao7">7</button>
+                            <button id="botao8">8</button>
+                            <button id="botao9">9</button>
+                            <button id="botaoSoma">+</button>
+                            <button id="botao0">0</button>
+                            <button id="botaoLimpar">C</button>
+                            <button id="botaoPorcentagem">%</button>
+                            <button id="botaoSubtracao">-</button>
+                            <button id="botaoIgual">=</button>
+                        </div>
+                    </div>
+                </section>
+            </aside>
+            
+            <section id="apps">
+                <header>
+                    <h2>Aplicativos</h2>
+                </header>
+                <br>
+                <div id="listaApps">
+                    <button onclick="abrirAgenda()">
+                        <i class="fa-solid fa-calendar-check" id="app-agenda"></i>
+                    </button>
+                    <button onclick="abrirPrevisaoTempo()">
+                        <i class="fa-solid fa-cloud-sun"></i>
+                    </button>
+                    <button onclick="abrirGeradorSenhas()">
+                        <i class="fa-solid fa-key"></i>
+                    </button>
+                    <button onclick="abrirCronometro()">
+                        <i class="fa-solid fa-stopwatch"></i>
+                    </button>
+                    <button onclick="abrirMp3()">
+                        <i class="fa-solid fa-music"></i>
+                    </button>
+                    <button>
+
+                    </button>
+                    <button>
+
+                    </button>
+                    <button>
+                        
+                    </button>
+                </div>
+            </section>
+        </main>
+
+        <!--estrutura dos Apps-->
+        <div id="lista-tarefas">
+            <header>
+                <h1>Agenda</h1>
+                <i class="fa-solid fa-square-xmark" id="fechar" onclick="fecharApps()"></i>
+            </header>
+            <form>
+                <label for="atividade">Atividade:</label>
+                <input type="text" id="atividade" required placeholder="Digite o que deseja agendar.">
+                
+                <label for="agendar-data">Dia: </label>
+                <input type="date" id="agendar-data">
+
+                <label for="data-prazo">Data prazo:</label>
+                <input type="date" id="data-prazo">
+
+                <div id="btn-acao" class="btn-acao">
+                    <button type="button" id="salvar">Salvar</button>
+                    <button type="button" id="cancelar">Cancelar</button>
+                </div>
+            </form>
+
+            <table id="tabela">
+                <thead>
+                    <tr class="linha">
+                        <th class="coluna">Atividade</th>
+                        <th class="coluna">Dia agendado</th>
+                        <th class="coluna">Prazo</th>
+                        <th class="coluna">Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+          </table>
+        </div>
+
+        <form id="weather-form">
+            <header>
+                <h1>Previsão do Tempo</h1>
+                <i class="fa-solid fa-square-xmark" id="fechar" onclick="fecharApps()"></i>
+            </header>
+            <input type="text" id="city-input" placeholder="Insira o nome da cidade">
+            <div id="weatherBtn">
+                <button id="submit-button">Procurar</button>
+                <button type="reset" id="reset-button">Limpar</button>
+            </div>
+            <div id="weather-info">
+                <i id="weather-icon" ></i>
+                <h2 id="city-name"></h2>
+                <h3 id="localtime"></h3>
+                <p id="temperature"></p>
+                <p id="description"></p>
+                <p id="humidity"></p>
+                <p id="wind-speed"></p>
+            </div>
+        </form>
+
+        <form id="geradorDeSenhas">
+            <div>
+                <h3>Gerador de Senhas</h3>
+                <i class="fa-solid fa-square-xmark" id="fechar" onclick="fecharApps()"></i>
+            </div>
+            <br>
+            <label for="comprimento">Comprimento:</label>
+            <input type="number" id="comprimento" name="comprimento" min="4" max="50" required><br>
+    
+            <label for="tipo">Tipo de caracteres:</label>
+            <select id="tipo" name="tipo">
+                <option value="alfanumerico">Alfanumérico (letras e números)</option>
+                <option value="letras">Apenas letras</option>
+                <option value="numeros">Apenas números</option>
+            </select><br>
+    
+            <label for="complexidade">Complexidade:</label>
+            <select id="complexidade" name="complexidade">
+                <option value="baixa">Baixa</option>
+                <option value="media">Média</option>
+                <option value="alta">Alta</option>
+            </select>
+
+            <input type="submit" value="Gerar Senha">
+
+           <div>
+                <label for="senhaGerada">Senha gerada:</label>
+                <button id="copiar-senha" title="copiar">
+                    <i class="fa-solid fa-copy"></i>
+                </button>
+           </div>
+            <input type="text" id="senha-gerada" readonly>
+            <button type="reset" id="limpar-senha">Limpar</button>
+        </form>
+
+        <div id="cronometro">
+            <div id="fecharCronometro">
+                <i class="fa-solid fa-square-xmark" id="fechar" onclick="fecharApps()"></i>
+            </div>
+            <h3>Cronômetro</h3>
+            <div class="temporizador">
+                <div class="controles-tempo">
+                    <button id="iniciarCronometro">
+                        <i class="fa-solid fa-play"></i>
+                    </button>
+                    <button id="pararCronometro">
+                        <i class="fa-solid fa-pause"></i>
+                    </button>
+                    <button id="reiniciarCronometro">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </button>
+                </div>
+                <div class="displayCronometro">
+                    <span id="tempoMinutos">00</span>:<span id="tempoSegundos">00</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="mp3">
+            <div id="fecharMp3">
+                <i class="fa-solid fa-square-xmark" id="fechar" onclick="fecharApps()"></i>
+            </div>
+            <header class="headerMp3">
+                <h3>Music Player</h3>
+            </header>
+
+            <form>
+                <label for="arquivoMusica">Adicionar Músicas:</label>
+                <input type="file" id="arquivoMusica" name="musica" multiple>
+                <button type="submit">Adicionar</button>
+                <button type="reset" id="limparLista">Limpar lista</button>
+            </form>
+
+            <ul id="musicList">
+
+            </ul>
+
+            <audio controls id="audioPlayer">
+                <source src="" type="audio/mp3">
+            </audio>
+        </div>
+    </div>
+
+    <script src="multitaferas.js"></script>
+</body>
+</html>
