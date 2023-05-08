@@ -28,9 +28,10 @@ setInterval(updateTime, 1000);
 // Obtém a data atual
 let dataAtual = new Date();
 
-// Define as variáveis para o ano e mês atual
+// Define as variáveis para o ano, mês e dia atual
 let anoAtual = dataAtual.getFullYear();
 let mesAtual = dataAtual.getMonth();
+let diaAtual = dataAtual.getDate();
 
 // Obtém o número de dias no mês atual
 let diasMes = new Date(anoAtual, mesAtual + 1, 0).getDate();
@@ -46,7 +47,7 @@ let linhaCabecalho = tabelaCalendario.querySelector('thead tr');
 document.querySelector('#mes-ano').textContent = obterNomeMes(mesAtual) + ' ' + anoAtual;
 
 // Cria as células para cada dia do mês e adiciona à tabela
-let diaAtual = 1;
+let dia = 1;
 for (let i = 0; i < 6; i++) {
   // Cria uma nova linha para a tabela
   let novaLinha = document.createElement('tr');
@@ -57,17 +58,21 @@ for (let i = 0; i < 6; i++) {
     let novaCelula = document.createElement('td');
 
     // Verifica se a célula é para um dia do mês atual
-    if (diaAtual <= diasMes) {
+    if (i === 0 && j < new Date(anoAtual, mesAtual, 1).getDay()) {
+      // Se a célula está antes do primeiro dia do mês, não exibe nada
+    } else if (dia <= diasMes) {
       // Define o texto da célula
-      novaCelula.textContent = diaAtual;
+      novaCelula.textContent = dia;
 
       // Adiciona a classe "dia-atual" se o dia for o dia atual
-      if (diaAtual === dataAtual.getDate() && mesAtual === dataAtual.getMonth() && anoAtual === dataAtual.getFullYear()) {
+      if (dia === diaAtual && mesAtual === dataAtual.getMonth() && anoAtual === dataAtual.getFullYear()) {
         novaCelula.classList.add('dia-atual');
       }
 
       // Incrementa o dia atual
-      diaAtual++;
+      dia++;
+    } else {
+      // Se a célula está depois do último dia do mês, não exibe nada
     }
 
     // Adiciona a célula à nova linha
