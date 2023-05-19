@@ -108,7 +108,7 @@ botaoDivisao.addEventListener('click', function () {
 botaoPorcentagem.addEventListener('click', function () {
     operando1 = parseFloat(resultado.value);
     operador = '%';
-    resultado.value = operando1 + operador;
+    resultado.value = '';
 });
 
 botaoLimpar.addEventListener('click', function () {
