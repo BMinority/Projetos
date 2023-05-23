@@ -1,0 +1,178 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(/Slide_imagens/bg/beautiful-nature-2675322_1280.jpg);
+    background-color: rgb(134, 134, 134);
+    background-blend-mode: overlay;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    width: 100%;
+    height: 2.5rem;
+    display: flex;
+    justify-content:center;
+    position: fixed;
+    bottom: 20px;
+    padding: 5px;
+}
+
+nav button {
+    margin-right: 15px;
+    font-size: 18px;
+    width: 8rem;
+    border-radius: 15px;
+    border: none;
+    transition: 0.2s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.active {
+    background-color:darkmagenta;
+    color: white;
+}
+
+/* Estilos para o slide */
+.slide-container {
+  position: relative;
+  width: 40rem;
+  height: 25rem;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 0 15px black;
+  transition: 0.3s;
+}
+
+.display-two {
+    border-radius: 50%;
+}
+
+.display-three {
+    border-radius: 30px;
+    border: 10px solid black;
+    box-shadow: 0 0 15px black;
+}
+
+.vintage {
+    border-radius: 50%;
+}
+.slide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  object-fit: cover;
+}
+
+.slide.active {
+  opacity: 1;
+}
+
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Estilos para os botões */
+.slide-controls {
+  margin-top: 10px;
+  text-align: center;
+  width: 45%;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  z-index: 9999;
+}
+
+.slide-controls button {
+  background-color: #333;
+  border: none;
+  padding: 8px 12px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+.slide-controls button i {
+  color:rgba(255, 255, 255, 0.475);
+  font-size: 24px;
+}
+
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+  }
+  45% {
+    opacity: 1;
+  }
+  55% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 768px) {
+    .slide-container {
+        width: 30rem;
+        height: 20rem;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: 100px;
+    }
+
+    nav button {
+        font-size: 14px;
+    }
+
+    .slide-controls {
+        width: 100%;
+    }
+}
+
+@media (max-width: 700px) {
+    .slide-controls {
+        width: 78%;
+    }
+}
+
+@media (max-width: 600px) {
+    .slide-container {
+        width: 30rem;
+        height: 20rem;
+    }
+
+    nav {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        bottom: 50px;
+    }
+}

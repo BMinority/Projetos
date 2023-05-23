@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="slide.css">
+    <title>Slide de imagens</title>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <button id="d1" class="active">Display 1</button>
+            <button id="d2">Display 2</button>
+            <button id="d3">Display 3</button>
+        </nav>
+
+        <div id="slide" class="slide-container">
+            <div class="slide active">
+              <img src="img/orion-nebula-11107_1280.jpg" alt="Imagem 1">
+            </div>
+            <div class="slide">
+              <img src="img/milky-way-4006343_1280.jpg" alt="Imagem 2">
+            </div>
+            <div class="slide">
+              <img src="img/tent-5441144_1280.jpg" alt="Imagem 3">
+            </div>
+        </div>
+          
+        <div class="slide-controls">
+            <button class="prev-slide"><i class="fas fa-chevron-left"></i></button>
+            <button class="next-slide"> <i class="fas fa-chevron-right"></i></button>
+        </div>
+    </div>
+    
+    <script src="slide.js"></script>
+</body>
+</html>
