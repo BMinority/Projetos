@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balança Fit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="imc_content">
+            <h1>Calcular IMC</h1>
+
+            <table>
+                <label for="peso">Qual o seu peso?</label>
+                <input type="text" id="peso" placeholder="Peso em Kg. ex.:70">
+
+                <label for="altura">Qual a sua altura?</label>
+                <input type="text" id="altura" placeholder="Altura em metros. ex.:1,70">
+
+                <input type="submit" value="Calcular IMC">
+            </table>
+
+            <main>
+                <section id="resultado">
+                    <div class="mensagem">
+                        <!--mensagem sobre o imc do usuario.-->
+                    </div>
+
+                    <div class="gif" id="exibir">
+                        <img src="/Balanca_Fit/img/smile.gif" id="smile">
+                        <img src="/Balanca_Fit/img/indiferente.gif" id="indif">
+                        <img src="/Balanca_Fit/img/smile_face.gif" id="happy">
+                        <img src="/Balanca_Fit/img/surprise.gif" id="surprise">
+                        <img src="/Balanca_Fit/img/sad.gif" id="sad">
+                        <img src="/Balanca_Fit/img/crazy.gif" id="crazy">
+                        <img src="/Balanca_Fit/img/homer-crazy.gif" id="homerCrazy">
+                    </div>
+                </section>
+            </main>
+
+            <input type="reset" value="Reiniciar" id="resetar">
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

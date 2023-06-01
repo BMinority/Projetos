@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+.container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.imc_content {
+    width: 300px;
+    height: auto;
+    background-color: rgb(255, 217, 0);
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+}
+
+h1 {
+    text-align: center;
+}
+
+label, input {
+    margin-top: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: none;
+}
+
+input {
+    padding: 5px;
+}
+
+input[type="submit"], input[type="reset"] {
+    cursor: pointer;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+#resultado {
+    width: 100%;
+    height: 260px;
+    padding: 10px;
+    background-color: black;
+    border-radius: 15px;
+    color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mensagem {
+    padding: 10px;
+    width: 95%;
+    height: 70px;
+}
+
+.gif {
+    width: 210px;
+    height: 255px;
+    display: flex;
+    justify-content: center;
+}
+
+.gif img {
+    width: 150px;
+    height: auto;
+    transition: 0.3s;
+}
+
+#indif, #happy, #surprise,
+#sad, #crazy, #homerCrazy {
+    display: none;
+}
+
+#homerCrazy {
+    width: 200px;
+}
